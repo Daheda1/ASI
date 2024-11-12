@@ -4,6 +4,7 @@ This is a FastAPI application for serving a pre-trained XGBoost regression model
 
 ## Project Structure
 
+```
 .
 ├── app
 │   ├── init.py
@@ -11,6 +12,7 @@ This is a FastAPI application for serving a pre-trained XGBoost regression model
 │   └── xgb_regressor_model.joblib
 ├── Dockerfile
 └── requirements.txt
+```
 
 - `app/main.py`: The main FastAPI application file where the model is loaded and API endpoints are defined.
 - `app/xgb_regressor_model.joblib`: The pre-trained XGBoost model file, which is loaded by the application.
@@ -24,11 +26,10 @@ This is a FastAPI application for serving a pre-trained XGBoost regression model
 ## Quick Start
 
 1. **Clone the repository**
-
-   ```bash
-   git clone <repository-url>
-   cd <repository-directory>
-   ```
+```bash
+git clone https://github.com/Daheda1/ASI
+cd ASI/API
+```
 
 
 2.	Build the Docker image
