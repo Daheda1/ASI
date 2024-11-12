@@ -2,12 +2,13 @@ from fastapi import FastAPI, HTTPException
 import joblib
 import pandas as pd
 
-# Initialize the FastAPI app
 app = FastAPI()
-
-# Load the saved model once when the app starts
-model = joblib.load('xgb_regressor_model.joblib')
+model = joblib.load('/code/app/xgb_regressor_model.joblib')
 required_features = model.feature_names_in_
+
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
 
 # Define the prediction endpoint with GET method
 @app.get("/predict")
@@ -24,7 +25,6 @@ def predict_quantity(order_date: str, order_hour: int):
         # Make the prediction
         predicted_quantity = model.predict(input_data)[0]
         
-        # Convert to float for JSON serialization
         return {"predicted_quantity": float(predicted_quantity)}
     
     except Exception as e:

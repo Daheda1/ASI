@@ -1,8 +1,6 @@
 import pandas as pd
 import joblib
-import numpy as np
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
 from xgboost import XGBRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
@@ -41,7 +39,6 @@ daily_hourly_quantity= daily_hourly_quantity.drop('order_date', axis=1)
 print(daily_hourly_quantity['order_weekday'].value_counts())
 print(daily_hourly_quantity['order_month'].value_counts())
 
-# Display the result
 print(daily_hourly_quantity)
 
 X = daily_hourly_quantity.drop('total_quantity', axis=1)

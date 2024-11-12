@@ -3,3 +3,5 @@ uvicorn
 pandas
 fastapi
 joblib
+scikit-learn
+xgboost
