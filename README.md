@@ -1,4 +1,4 @@
-# FastAPI Model API
+# FastAPI Pizza sales number API
 
 This is a FastAPI application for serving a pre-trained XGBoost regression model. The application is containerized using Docker and can be deployed by building and running a Docker image.
 
